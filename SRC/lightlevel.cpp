@@ -6,7 +6,7 @@ steinhart hart conversion from the thermistor resistance
 #include "lightlevel.h"
 
 
-AnalogIN LightLevelVoltage ( lightout );
+AnalogIn LightLevelVoltage ( lightout );
 
 float lightLevel() {
         //Apply Power to thermistor

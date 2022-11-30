@@ -1,5 +1,5 @@
 #ifndef TEMPSENSE
 #define TEMPSENSE
-// Protype for function cells
+// prototype for function calls
 float readTemp();
 #endif
