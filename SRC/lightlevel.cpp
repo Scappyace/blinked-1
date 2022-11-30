@@ -1,18 +1,16 @@
-/* this function reads the thermistor voltage and returns in celsius using 
-steinhart hart conversion from the thermistor resistance
-*/
+/* This function reads the thermistor voltage and returns the temperature in Celsius
+   using Steinhart Hart conversion from thermistor resistance
+ */
 #include "mbed.h"
-#include "constants.h"
+#include "Constants.h"
 #include "lightlevel.h"
 
+AnalogIn lightLevelVoltage( lightOut );
 
-AnalogIn LightLevelVoltage ( lightout );
+float readLightLevel() {
 
-float lightLevel() {
-        //Apply Power to thermistor
-
-        //read the light level dependant resistor voltage
-        float lightLevel = lightLevelVoltage.read() * 100; /range of ACD .read 0->1
-
-        return lightLevel;
+    // Read the light dependent resistor voltage
+    float lightLevel = lightLevelVoltage.read() * 100; // Range of ADC.read 0->1
+ 
+    return lightLevel;
 }

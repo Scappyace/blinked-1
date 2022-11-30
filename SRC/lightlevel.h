@@ -1,5 +1,5 @@
 #ifndef LIGHTLEVEL
 #define LIGHTLEVEL
-// prototype for fuction cells
-float ReadLightLevel();
+// prototype for function calls
+float readLightLevel();
 #endif

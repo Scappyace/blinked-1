@@ -5,7 +5,14 @@
 #define thermPower P10_3
 #define thermGround P10_0
 #define thermOut P10_1
-
+#define GreenLED P0_5
+#define Button P0_4
+#define ALTSENSOR
+#ifndef ALTSENSOR
+#define lightOut P10_4
+#else
+#define lightOut P10_2
+#endif
 /* Reference resistor in series with the thermistor is of 10kohm */
 #define R_REFERENCE                         (float)(10000)
 

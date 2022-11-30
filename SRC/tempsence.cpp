@@ -1,23 +1,23 @@
-/*this fuction reads the thermistor voltage and returns the temperature in Celsius
-using Steninhart Hart convertion from thermistor resistance 
-*/
+/* This function reads the thermistor voltage and returns the temperature in Celsius
+   using Steinhart Hart conversion from thermistor resistance
+ */
 #include "mbed.h"
 #include "Constants.h"
-#include "TempSense.h"
+#include "tempsence.h"
 
 DigitalOut vdd(thermPower);
 DigitalOut gnd(thermGround);
 AnalogIn temperatureVoltage( thermOut );
 
 float readTemp() {
-    //apply power to thermistor
+    //  Apply power to the thermistor
     gnd = false;
     vdd = true;
-    //read power from thermistor
+    // Read the thermistor voltage
     float refVoltage = temperatureVoltage.read() * 2.4; // Range of ADC 0->2*Vref
-    //cut power to thermistor
-    vdd =false;
-    
+    // Cut power to thermistor
+    vdd = false;
+
     float refCurrent = refVoltage  / 10000.0; // 10k Reference Resistor
     float thermVoltage = 3.3 - refVoltage;    // Assume supply voltage is 3.3v
     float thermResistance = thermVoltage / refCurrent; 
