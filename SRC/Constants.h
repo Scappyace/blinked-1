@@ -25,4 +25,9 @@
 
 /* Zero Kelvin in degree C */
 #define ABSOLUTE_ZERO                       (float)(-273.15)
+struct things_t {
+    float tempC;
+    float lightLevel;
+    bool buttonState;
+}
 #endif
