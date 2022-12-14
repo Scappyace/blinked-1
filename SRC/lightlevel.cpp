@@ -12,7 +12,7 @@ void readLightLevel() {
 
     while(true) {
     // Read the light dependent resistor voltage
-    myData.lightLevel = lightLevelVoltage.read() * 100; // Range of ADC.read 0->1
-    ThisThread::sleep_for(500ms);
+        myData.lightL = lightLevelVoltage.read() * 100; // Range of ADC.read 0->1
+        ThisThread::sleep_for(500ms);
     }
 }

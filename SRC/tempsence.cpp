@@ -5,7 +5,6 @@
 #include "Constants.h"
 #include "mbed.h"
 
-
 DigitalOut vdd(thermPower);
 DigitalOut gnd(thermGround);
 AnalogIn temperatureVoltage(thermOut);
@@ -13,14 +12,14 @@ extern things_t myData;
 
 void readTemp() {
   //  Apply power to the thermistor
-  // gnd = false;
-  // vdd = true;
-  // vdd = false;
-  // Read the thermistor voltage
-  float refVoltage = temperatureVoltage.read() * 2.4; // Range of ADC 0->2*Vref
-  // Cut power to thermistor
-  vdd = false;
+  //    gnd = false;
+  //    vdd = true;
+  //    vdd = false;
   while (true) {
+    // Read the thermistor voltage
+    float refVoltage =
+        temperatureVoltage.read() * 2.4;     // Range of ADC 0->2*Vref
+                                             // Cut power to thermistor
     float refCurrent = refVoltage / 10000.0; // 10k Reference Resistor
     float thermVoltage = 3.3 - refVoltage;   // Assume supply voltage is 3.3v
     float thermResistance = thermVoltage / refCurrent;
@@ -34,5 +33,6 @@ void readTemp() {
     ThisThread::sleep_for(500ms);
 
   }
+
   //    return temperatureC;
 }

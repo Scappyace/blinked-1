@@ -2,20 +2,20 @@
 #include "Constants.h"
 #include "Button.h"
 
-exterm things_t myData
-DigitalIn userButton(P0_4);
+extern things_t myData;
+DigitalIn userButton(PUSH_BUTTON);
 void readButtonState() {
-    /* set stuff up*/
-    bool lastSwtichState = userButton;
+    /* set stuff up */
+    bool lastSwitchState = userButton;
     bool pressed = false;
-    while (true){ /*loop forever*/
+    while(true){ /* loop forever */
         ThisThread::sleep_for(50ms);
-        if (userbutton == ture); {
+        if (userButton == true) {
             pressed = true;
         }
-        if (userbutton == false && pressed == true); {
-        myData.buttonState = !myData.buttonState;
-        pressed = false;
+        if (userButton == false && pressed == true) {
+            myData.buttonState = !myData.buttonState;
+            pressed = false;
         }
     }
 }

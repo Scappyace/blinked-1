@@ -23,13 +23,11 @@ int main()
 {
     readTempHandle.start(callback(readTemp));
     lightLevelHandle.start(callback(readLightLevel));
-    buttonHandel.start(callback(readButtonState));
-    displayhandle.start(callback(displayTask));
+    buttonHandle.start(callback(readButtonState));
+    displayHandle.start(callback(displayTask));
     while (true) {
         led = !led;
         ThisThread::sleep_for(BLINKING_RATE);
-//        printf("button is %s\n", readButtonState()?"Pressed":"Not Pressed");
-//        if (readButtonState() ==true) Green = true;
-        else Green = false;
+
     }
 }

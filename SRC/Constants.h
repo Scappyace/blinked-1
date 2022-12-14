@@ -5,8 +5,8 @@
 #define thermPower P10_3
 #define thermGround P10_0
 #define thermOut P10_1
-#define GreenLED P0_5
-#define Button P0_4
+#define GREENLED P0_5
+#define PUSH_BUTTON P0_4
 #define ALTSENSOR
 #ifndef ALTSENSOR
 #define lightOut P10_4
@@ -24,10 +24,10 @@
 #define C_COEFF                          (float)(0.0000002041094f)
 
 /* Zero Kelvin in degree C */
-#define ABSOLUTE_ZERO                       (float)(-273.15)
+#define ABSOLUTE_ZERO                    (float)(-273.15)
 struct things_t {
     float tempC;
-    float lightLevel;
+    float lightL;
     bool buttonState;
-}
+};
 #endif
